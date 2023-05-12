@@ -13,6 +13,6 @@ const server = http.createServer(function (req, res) {
 });
 server.listen(port, hostname, server_start, function () {
   console.log(`Nasluchiwanie na porcie: ${port}`);
-  console.log(`Data : ${server_start}`)
+  console.log(`Data uruchomienia: ${server_start}`)
   console.log("Autor: Kacper Papiński");
 });
