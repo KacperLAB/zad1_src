@@ -1,6 +1,6 @@
 const express = require('express');
 // Constants
-const PORT = 80;
+const PORT = 8080;
 const HOST = 'localhost';
 const server_start = new Date().toLocaleString();
 // App
@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.send(`IP: ${ipAddress}  <br> ${time}`)
 });
 
-app.listen(PORT, HOST, server_start, () => {
+app.listen(PORT, HOST, () => {
   console.log(`Uruchomiono: ${server_start}`)
   console.log("Autor: Kacper Papiński");
   console.log(`Running on http://${HOST}:${PORT}`);
