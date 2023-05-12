@@ -5,7 +5,9 @@ const server_start = new Date().toLocaleString();
 
 const server = http.createServer(function (req, res) {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  var ip = req.headers['x-forwarded-for'] ||
+     req.socket.remoteAddress ||
+     null;
   var time = new Date();
   res.end(`IP: ${ip}\n${time}`);
 });
