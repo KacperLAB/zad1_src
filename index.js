@@ -1,18 +1,15 @@
-const express = require('express');
-// Constants
-const PORT = 80;
-const HOST = 'localhost';
+const http = require("http");
+const hostname = "localhost";
+const port = 8000;
 const server_start = new Date().toLocaleString();
-// App
-const app = express();
-app.get('/', (req, res) => {
+const server = http.createServer(function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/plain" });
   const ipAddress = req.socket.remoteAddress;
   var time = new Date();
-  res.send(`IP: ${ipAddress}  <br> ${time}`)
+  res.end(`IP: ${ipAddress}\n${time}`);
 });
-
-app.listen(PORT, HOST, () => {
+server.listen(port, hostname, function () {
+  console.log(`Server running at http://${hostname}:${port}/`);
   console.log(`Uruchomiono: ${server_start}`)
   console.log("Autor: Kacper Papiński");
-  console.log(`Running on http://${HOST}:${PORT}`);
 });
