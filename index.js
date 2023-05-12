@@ -12,7 +12,7 @@ const server = http.createServer(function (req, res) {
   res.end(`IP: ${ip}\n${time}`);
 });
 server.listen(port, hostname, server_start, function () {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Nasluchiwanie na porcie: ${port}`);
   console.log(`Uruchomiono: ${server_start}`)
   console.log("Autor: Kacper Papiński");
 });
