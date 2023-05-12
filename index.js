@@ -1,5 +1,5 @@
 const http = require("http");
-const hostname = 0.0.0.0;
+const hostname = '0.0.0.0';
 const port = 80;
 const server_start = new Date().toLocaleString();
 const server = http.createServer(function (req, res) {
